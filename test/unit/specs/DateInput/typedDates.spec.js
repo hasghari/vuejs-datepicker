@@ -29,10 +29,10 @@ describe('DateInput', () => {
     expect(wrapper.vm.formattedValue).toEqual(dateString)
   })
 
-  it('emits the date when typed', () => {
+  it('emits the date when blurred', () => {
     const input = wrapper.find('input')
     wrapper.vm.input.value = '2018-04-24'
-    input.trigger('keyup')
+    input.trigger('blur')
     expect(wrapper.emitted().typedDate).toBeDefined()
     expect(wrapper.emitted().typedDate[0][0]).toBeInstanceOf(Date)
   })
